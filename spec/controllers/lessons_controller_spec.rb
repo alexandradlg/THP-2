@@ -137,7 +137,7 @@ RSpec.describe LessonsController, type: :controller do
     end
 
     context "with a too long title" do
-      let(:title) { Faker::Lorem.sentence(10).first(400) }
+      let(:title) { Faker::Lorem.sentence(50).first(700) }
 
       it "returns response 403" do
         subject
@@ -255,7 +255,7 @@ RSpec.describe LessonsController, type: :controller do
     end
 
     context "with a valid id and a too long title" do
-      let(:title) { Faker::Lorem.sentence(10).first(400) }
+      let(:title) { Faker::Lorem.sentence(50).first(700) }
 
       it "returns response 403" do
         subject
