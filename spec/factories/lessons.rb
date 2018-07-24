@@ -11,7 +11,7 @@
 
 FactoryBot.define do
   factory :lesson do
-    title "Je suis le titre d'une leçon"
-    description "Je suis la description d'une lesson"
+    title { Faker::Educator.campus }
+    description { Faker::Educator.course }
   end
 end
