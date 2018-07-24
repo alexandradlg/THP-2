@@ -13,7 +13,10 @@ require 'rails_helper'
 
 RSpec.describe Lesson, type: :model do
   it "should create a new lesson" do
-    expect(build(:lesson)).to be_valid
+    lesson = create(:lesson)
+    expect(lesson).to be_valid
+    expect(lesson.title).not_to be_blank
+    expect(lesson.description).not_to be_blank
   end
 
   it { should validate_length_of(:title).is_at_most(50) }

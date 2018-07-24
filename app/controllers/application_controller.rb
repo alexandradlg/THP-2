@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
-  rescue_from ActionController::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::ParameterMissing, with: :rescue_missing_params
-  rescue_from ActionController::RecordInvalid, with: :rescue_bad_params
+  rescue_from ActiveRecord::RecordInvalid, with: :rescue_bad_params
 
   def record_not_found(exception)
     render json: { errors: [exception.message] }, status: :not_found
