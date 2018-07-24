@@ -8,6 +8,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "rubocop && annotate",
-      "pre-push": "rubocop && annotate && rspec",    
+      "pre-push": "rubocop && annotate && COVERAGE=true rspec",    
   }
 }

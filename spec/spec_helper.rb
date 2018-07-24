@@ -14,6 +14,23 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 # require File.expand_path("../../config/environment", __FILE__)
+require 'simplecov'
+
+SimpleCov.profiles.define 'THP' do
+  add_group "Models", "app/models"
+  add_group "Controllers", "app/controllers"
+  add_group "Serializers", "app/serializers"
+  add_group "Initializers", "config/initializers"
+  add_group 'Helpers', 'app/helpers'
+  add_group 'Libraries', 'lib'
+  add_filter do |source_file|
+    source_file.lines.count < 5
+  end
+  SimpleCov.minimum_coverage 95
+  SimpleCov.minimum_coverage_by_file 90
+end
+
+SimpleCov.start 'THP' if ENV["COVERAGE"]
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
