@@ -1,6 +1,9 @@
 inherit_from:
   - http://relaxed.ruby.style/rubocop.yml
 
+Layout/EndOfLine:
+  Enabled: false
+  
 AllCops:
   DisplayStyleGuide: true
   DisplayCopNames: true
